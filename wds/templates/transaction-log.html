@@ -1,431 +1,445 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
-
-<html>
 <head>
-    <style>
-            
-        *{
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;1,400&display=swap" rel="stylesheet"> -->
 
-        body{
-            background: #00000f;
-            text-transform: capitalize;
-        }
-        .main-page{
-            display: flex;
-            height: 100%;
-        }
+  <style>
 
-            
-    /*   ---------------------------    SIDE BAR   -------------------------------- */
-    .side-bar-wrapper {
-        width: 17vw;
-        /* height: 95vh; */
-        margin: 5vh 0;
-        color: #FCAF58;
-        padding: 0 10px 0 0px;
-        border-right: 2px solid white;
-    }
-    
-    /*   -------------- team info  ------------- */
-    
-    .side-bar-wrapper .team-info{
-        /* background: #212646; */
-        text-align: center;
-        margin: 10px;
-        padding: 5px 10px 20px 10px;
-        border-radius: 30px;
-        /* box-shadow: 3px 3px 15px 0 #212646; */
-        box-shadow: 1px 1px 15px 0 #00000f;
-        
-        
-    }
-    .side-bar-wrapper .team-info .team-name h2{             /*  name size */
-        font-size: 2rem;
-        font-weight: bolder;
-        margin-bottom: 25px;
-        color: #FCAF58;
-        font-family: 'Sanchez', serif;
-        text-transform: uppercase;
-    }
-
-    
-    
-    
-    /*   ---------------- Buttons  -------------- */
-    .requestButtons{
-        margin-top: 30px;
-    }
-    .requestButtons .req-btn{
-        margin-bottom: 10px;
-        display: flex;
-        flex-flow: column;
-    }
-    .requestButtons .req-btn  {
-        margin-left: 10px;
-        border-bottom: 1.5px solid #212646;
-        text-align: center;                     /* links to center */
-    }
-    .requestButtons .req-btn:hover{
-        cursor: pointer;
-        text-align: center;               
-    }
-    .requestButtons .req-btn a{
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        padding: 15px 10px;
-        color: whitesmoke;
-    
-    }
-    .requestButtons .req-btn a:hover{
-        text-align: center;               /* links to center on hovering */
-    }
-    
-
-
-        /*  ------------------------ TABLE ------------------------  */
-
-    th, table tr:nth-of-type(2n){
-      border: none;
-      background: transparent;
-  }
+:root {
+  font-size: 16px;
+  /* font-family: 'Lato', sans-serif; */
+  --text-primary: #b6b6b6;
+  --text-secondary: #ececec;
+  --bg-primary: #23232e;
+  --bg-secondary: #141418;
+  --transition-speed: 600ms;
   
-  th, table tr:nth-of-type(2n) td{
-      border: none;
-      background: transparent;
-  }
-
-        /* ---------- table section ---------- */
-    .table-section{
-        width: 70vw;
-        height: 60vmin;
-        display: flex;
-        flex-flow: column;
-        margin: 5vh auto;
-        
-    }
-        /* ---------- table heading ---------- */
-    .table-section h1{
-        text-transform: capitalize;
-        margin-bottom: 20px;
-        text-align: center;
-        font-size: 2.2rem;
-        font-weight: 500;
-        color: #FCAF58;
-    }
-
-        /* -------------- table -------------- */
-    .table-section table{
-        border: none;
-        background: #8953b036;
-        width: 100%;
-    }
-
-    .table-section table thead {
-      
-      background: none;
-      border: none;
-      background-image: linear-gradient(to right, #46317796, #29718398);
-      border-bottom: 2px solid #fff;
-    }
-
-    .table-section thead th{
-      font-size: 1.2rem;
-      text-align: center;
-      height: 50px;
-      z-index: 10;
-      color: white;
-  }
-
-  .table-section tbody td{
-      
-      text-align: center;
-      font-size: 1rem;
-      
-      padding-right: 10px;
-      color: white;
-      z-index: 10;
-  }
-
-
-
-
-
-
-
-
-    /* ----------------- side bar accordian ----------------- */
-	.side-bar-caret{
-  display: none;
-  font-size: 30px;
-  color: #FCAF58;
 }
 
-
-.card, .card-body{
+body {
+  color: black;
+  background: linear-gradient(to right,black , rgb(27, 2, 18));
+  margin: 0;
   padding: 0;
+  
 }
-.side-bar-wrapper-acc {
-      width: 100%;
-      color: #FCAF58;
-      background: #000;
+
+/* new css */
+.team-info{
+  /* background: #212646; */
+  text-align: center;
+  margin: 10px;
+  padding: 5px 5px 5px 5px;
+  border-radius: 10px;
+  width: 12rem;
+  /* box-shadow: 3px 3px 15px 0 #212646; */
+  box-shadow: 2px 2px 15px 0 #00000f9f;
+  
+  
+}
+
+.team-info .team-name {             /*  name size */
+  font-size: 1rem;
+  font-weight: bolder;
+  
+  color: #FCAF58;
+  font-family: 'Sanchez', serif;
+  text-transform: uppercase;
+}
+
+.team-info {
+  font-size: 1.1em;
+  color:  #f5a976;
+  line-height: 1rem;
+  /* margin: 0 10%; */
+  text-align: center;
+  font-family: 'Sanchez', serif;
+}
+
+
+
+/* new css end */
+
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #6649b8;
+}
+
+main {
+  margin-left: 5rem;
+  padding: 1rem;
+}
+
+.navbar::-webkit-scrollbar { width: 0 !important}
+
+.navbar {
+  position: fixed;
+  background-color: var(--bg-primary);
+  transition: width 500ms ease;
+  overflow: scroll;
+  
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-item:last-child {
+  margin-top: auto;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  filter: grayscale(100%) opacity(0.7);
+  transition: var(--transition-speed);
+  padding-left: 15px;
+}
+
+
+
+.nav-link:hover {
+  filter: grayscale(0%) opacity(1);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.link-text {
+  display: none;
+  margin-left: 0.5rem;
+}
+
+.nav-link svg {
+  width: 2rem;
+  min-width: 2rem;
+  margin: 0 1.5rem;
+}
+
+.fa-primary {
+  color: #ff7eee;
+}
+
+.fa-secondary {
+  color: #df49a6;
+}
+
+.fa-primary,
+.fa-secondary {
+  transition: var(--transition-speed);
+}
+
+.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  font-size: 1.5rem;
+  letter-spacing: 0.3ch;
+  width: 100%;
+}
+
+.logo svg {
+  transform: rotate(0deg);
+  transition: var(--transition-speed);
+}
+
+.logo-text
+{
+  font-size: 21px;
+  display: inline;
+  position: absolute;
+  left: -999px;
+  transition: var(--transition-speed);
+}
+
+.navbar:hover .logo svg {
+  transform: rotate(-180deg);
+}
+
+/* Small screens */
+@media only screen and (max-width: 600px) {
+  .navbar {
+    bottom: 0;
+    width: 100vw;
+    height: 5rem;
   }
-  .team-info-acc{
+
+  .logo {
     display: none;
   }
 
-.side-bar-wrapper-acc{
-      background: #000000;
-      text-align: center;
-      width: 100vw;
-      padding: 5px 10px 20px 0px;
+  .navbar-nav {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    justify-content:space-evenly;
+  }
+
+  main {
+    margin: 0;
+  }
 }
 
-  .team-info-acc .team-name h2{             /*  name size */
-      font-size: 2rem;
-      font-weight: bolder;
-      margin-bottom: 25px;
-      color: #FCAF58;
-      font-family: 'Sanchez', serif;
-      text-transform: uppercase;
-      text-align: center;
+/* Large screens */
+@media only screen and (min-width: 600px) {
+  .navbar {
+    top: 0;
+    width: 5rem;
+    height: 100vh;
   }
-  .team-info-acc .team-balance h5 {
-      font-size: 1.1em;
-      color:  #f5a976;
-      line-height: 1.5rem;
-      margin: 0 10%;
-      text-align: center;
-      font-family: 'Sanchez', serif;
+
+  .navbar:hover {
+    width: 16rem;
   }
-  .req-btn a{
-    color: #fff;
+
+  .navbar:hover .link-text {
+    display: inline;
   }
+
+  .navbar:hover .logo svg
+  {
+    margin-left: 11rem;
+  }
+
+  .navbar:hover .logo-text
+  {
+    left: 0px;
+  }
+}
+
+
+
+/* @media (max-width: 720px) {
+
+  .mainpage{
+    display: block;
+  }
+  .side-bar-wrapper{
+    display: none;
+  }
+  .team-info-acc{
+    display: block;
+  }
+  .side-bar-caret{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+  }
+  .stock-table{
+    margin: 0 auto;
+  }
+  .stockTableInsider thead th{
+    font-size: 0.9rem;
+  }
+  .stockTableInsider tbody td{
+    font-size: 0.9rem;
+  }
+} */
+
+/******************** Table ****************/
+
+
+h1{
+  font-size: 30px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+table{
+  width:100%;
+  table-layout: fixed;
+}
+.tbl-header{
+  background-color: rgba(255,255,255,0.3);
+ }
+.tbl-content{
+  /* height:300px; */
+  /* overflow-x:auto; */
+  margin-top: 0px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+th{
+  padding: 20px 15px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+  text-transform: uppercase;
+}
+td{
   
+  padding: 15px;
+  text-align: center;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 16px;
+  color: white;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
 
 
-  
-  @media (max-width: 720px) {
+/* demo styles */
 
-    .main-page{
-      display: block;
-	  width: 100vw;
-      padding-bottom: 50px;
-    }
-    .side-bar-wrapper{
-      display: none;
-    }
-    .team-info-acc{
-      display: block;
-    }
+/* @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+body{
+  background: -webkit-linear-gradient(left, #00140c17, #00140c17);
+  background: linear-gradient(to right, #f00cbe, #f00cbe);
+  font-family: 'Roboto', sans-serif;
+}
+section{
+  margin: 50px;
+} */
 
 
-    .side-bar-caret{
-      display: flex;
-      width: 20%;
-      justify-content: center;
-      align-items: center;
-    }
-    .stock-table{
-      margin: 0 auto;
-    }
-    .stockTableInsider thead th{
-      font-size: 1rem;
-      height: 20px;
-      width: 90%;
-    }
-    .stockTableInsider tbody td{
-      font-size: 0.8rem;
-    }
-
-	.table-section{
-		width: 100%;
-		height: 100%;
-		display: flex;
-		margin: 10px 5px;
-		text-align: center;
-	}
-	.table-section h1{
-		margin-top: 30px;
-	}
-	.table-section .table-message{
-		margin: 0 auto;
-		width: 70%;
-	}
-    .table-section thead th {
-		font-size: 1rem;
-		text-align: center;
-		height: 30px;
-		color: white;
-	
-	}
 
 
-  
+/* for custom scrollbar for webkit browser*/
 
-
+::-webkit-scrollbar {
+    width: 6px;
+} 
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+}
+@media screen and (max-width: 768px) {
+  .tbl-header thead th{
+     font-size: 15px;
   }
-
-
-
+  .tbl-content tbody td{
+    font-size: 13px !important;
+  }
+  .tbl-content tbody td:nth-child(2) p{
+    font-size: 10px !important;
+  }
+  .tbl-content tbody td:nth-child(1) p{
+    font-size: 12px !important;
+  }
+}
+@media screen and (max-width: 500px) {
+  .tbl-header thead th p{
+     font-size: 9px;
+     position: relative;
+     right: 9px;
+  }
+  .tbl-header thead th:nth-child(1){
+    position: relative;
+    right: 4px;
+  }
+  .tbl-header thead th:nth-child(2){
+    position: relative;
+    right: 4px;
+  }
+  .tbl-header thead th:nth-child(4){
+    position: relative;
+    right: 5px;
+  }
+  .tbl-content tbody td{
     
-
-
-
-
-
-
-
-
-
-
-
-        </style>
+    font-size: 13px !important;
+  }
+  .tbl-content tbody td:nth-child(2) p{
+   position: relative;
+   right: 24px !important;
+    font-size: 8px !important;
+  }
+  .tbl-content tbody td:nth-child(1) p{
+    font-size: 9px !important;
+    position: relative;
+    right: 5px;
+  }
+  .tbl-content tbody p{
+    position: relative;
+    right: 10px !important;
+  }
+}
+  </style>
 </head>
 
 <body>
+  
+  {% include 'dashnav.html' %}
 
-<section class="main-page">
+  <main>
 
+    <!-- ******************** Table ****************** -->
 
-
-
-
-    	
-		
-
-<!-- ---------------------------- accordian ---------------------------- -->
-<div class="team-info-acc">
-	<div class="team-name"><h2>{{ user.username }}</h2></div>
-	<div class="team-balance">    
-	  {% for dd in dashdata %}
-	  <h5>Team Balance {{ dd.userbalance }}</h5>
-	  {% endfor %}
-	</div>
-  </div>
-
-
-	<a class="side-bar-caret" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-	  <i class="fa fa-angle-down" style="color: #FCAF58;"></i>
-	</a>
-	
-  <div class="collapse" id="collapseExample">
-	<div class="">
-	  <div class="side-bar-wrapper-acc">
-
-        <div class="requestButtons">
-       
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:dashboard' %}">Dashboard</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:stocks' %}">Stock Market</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:createrequest' %}">Create Trade Request</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:sentreq' %}"≈>Requests Sent</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:receivedreq' %}">Received Requests</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:transaction-history' %}">Sent Requests Status</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:transaction-log' %}" style="color:#f8bd95">Transactions</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:report' %}">Report(Insider Trading)</a></div>
+    <section style="padding-left: 5%; padding-right: 5%; width: 90%;">
+      <!--for demo wrap-->
+      <h1>Transactions Log</h1>
+      
+      <div class="tbl-header" >
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead >
+            <th><p>Sender</p></th>
+            <th><p>Receiver</p></th>
+            <th><p>Type</p></th>
+            <th><p>Stock</p></th>
+            <th><p>Number of Stocks</p></th>
+            <th><p>Price per Stock</p></th>
+          </thead>
+        </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            {% for req in requests %}
         
-        <div class="req-btn"><a class="btn-insider" href="https://unh.zoom.us/j/95053387491?pwd=aTZ6d0xUOGlSTXBwQUxBVWJ6WHBudz09">Insider Trading</a></div>
-    </div>
-	  
-  </div>
-	</div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="side-bar-wrapper">
-            
-        <div class="team-info">
-        <div class="team-name"><h2>{{ user.username }}</h2></div>
-        <div class="team-balance">    
-            {% for dd in dashdata %}
-            <h5>Team Balance {{ dd.userbalance }}</h5>
-            {% endfor %}
-        </div>
-        </div>
-
-        <div class="requestButtons">
-       
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:dashboard' %}">Dashboard</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:stocks' %}">Stock Market</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:createrequest' %}">Create Trade Request</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:sentreq' %}"≈>Requests Sent</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:receivedreq' %}">Received Requests</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:transaction-history' %}">Sent Requests Status</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:transaction-log' %}" style="color:#f8bd95">Transactions</a></div>
-            <div class="req-btn"><a class="btn-insider" href="{% url 'core:report' %}">Report (Insider Trading)</a></div>
-        
-        <div class="req-btn"><a class="btn-insider" href="https://unh.zoom.us/j/95053387491?pwd=aTZ6d0xUOGlSTXBwQUxBVWJ6WHBudz09">Insider Trading</a></div>
-    </div>
+                <tr>
+                    <td>{{ req.sender }}</td>
+                    <td>{{ req.receiver }}</td>
+                    <td>{{ req.action }} </td>
+                    <td>{{ req.stock }} </td>
+                    <td>{{ req.numberofstocks }}</td>
+                    <td>{{ req.priceperstock }}</td> 
+                    <!--<td>{{ req.status }}</td>-->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+      </div>
+    </section>
     
-</div>
-
-<div class="table-section">
-    <h1>Transaction Log</h1>
-    <table>
-
-    <thead>
-        <tr>
-            <th>sender</th>
-            <th>receiver</th>
-            <th>type</th>
-            <th>stock</th>
-            <th>number of stocks</th>
-            <th>priceperstock</th>
-            <!--<th>Status</th>-->
-        </tr>
-    </thead>
     
-    <tbody>
-    {% for req in requests %}
+    <!-- <h1>CSS is Cool</h1> -->
 
-        <tr>
-            <td>{{ req.sender }}</td>
-            <td>{{ req.receiver }}</td>
-            <td>{{ req.action }} </td>
-            <td>{{ req.stock }} </td>
-            <td>{{ req.numberofstocks }}</td>
-            <td>{{ req.priceperstock }}</td> 
-            <!--<td>{{ req.status }}</td>-->
-        </tr>
-        {% endfor %}
-    </tbody>
-
-    </table>
-  </div>  
-</section>
+    <!-- <p>
+      I'm baby kale chips affogato ennui lumbersexual, williamsburg paleo quinoa
+      iceland normcore tumeric. Kitsch coloring book retro, seitan schlitz
+      tattooed biodiesel vexillologist neutra. Synth mumblecore deep v, umami
+      selfies normcore gluten-free snackwave. Seitan ramps drinking vinegar
+      venmo keytar, humblebrag VHS post-ironic tacos godard pour-over.
+    </p> -->
+     
+  </main>
 </body>
-</html>
-
-
-
-{% endblock %}
-
-
-
-
-
-
-
-

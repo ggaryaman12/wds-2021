@@ -4,65 +4,229 @@
 {% block usrlgn %}
 
 <style>
-  @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,700');
-*{
-	padding:0;
-	margin:0;
+  *{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
 }
 
 body{
-    background-image: url("{% static 'images-2019/bg-11.jpg' %}");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-	background-size: cover;
-    font:16px/1.6 Arial,  sans-serif;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+	background-color: #1A1A1D;
 }
 
-.background-transparent {
-    background: none;
-    border: none;
-    box-shadow: none;
+.wave{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	z-index: -1;
 }
 
-.top-nav ul li a{
-    color: #fff;
-    font-size: 1.35rem;
-}
-.form-field{
-  height:3.5rem !important;
-}
-.btn {
-  background-color: #FCAF58;
-}
-.main-form{
-  box-shadow: 2px 10px 40px rgba(224, 137, 74,0.5);
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap :7rem;
+    padding: 0 2rem;
 }
 
-.form-heading h2{
-  font-size: 2.5rem;
-  font-family: 'Spectral SC', serif;
-  
+.img{
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
-form button{
-            color: black;
-            padding: 10px 25px;
-            text-transform: uppercase;
-            border-radius: 15px;
-            border: none;
-            background:#FCAF58;
-        }
-        form button:hover{
-            background: #fcaf58bb;
-        }
-        form button:active{
-            background: #FCAF58;
-            
-        }
+.login-content{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+}
+
+.img img{
+	width: 500px;
+}
+
+form{
+	width: 360px;
+}
+
+.login-content img{
+    height: 100px;
+}
+
+.login-content h2{
+	margin: 15px 0;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 2.9rem;
+}
+
+.login-content .input-div{
+	position: relative;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #950740;
+}
+
+.login-content .input-div.one{
+	margin-top: 0;
+}
+
+.i{
+	color: #950740;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.i i{
+	transition: .3s;
+}
+
+.input-div > div{
+    position: relative;
+	height: 45px;
+}
+
+.input-div > div > h5{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #fff;
+	font-size: 18px;
+	transition: .3s;
+}
+
+.input-div:before, .input-div:after{
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	width: 0%;
+	height: 2px;
+	background-color: #fff;
+	transition: .4s;
+}
+
+.input-div:before{
+	right: 50%;
+}
+
+.input-div:after{
+	left: 50%;
+}
+
+.input-div.focus:before, .input-div.focus:after{
+	width: 50%;
+}
+
+.input-div.focus > div > h5{
+	top: -5px;
+	font-size: 15px;
+}
+
+.input-div.focus > .i > i{
+	color: #950740;
+}
+
+.input-div > div > input{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	background: none;
+	padding: 0.5rem 0.7rem;
+	font-size: 1.2rem;
+	color: #950740;
+	font-family: 'poppins', sans-serif;
+}
+
+.input-div.pass{
+	margin-bottom: 4px;
+}
+
+a{
+	display: block;
+	text-align: right;
+	text-decoration: none;
+	color: #fff;
+	font-size: 0.9rem;
+	transition: .3s;
+}
+
+a:hover{
+	color: #950740;
+}
+
+.btn{
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #950740, #950740, #950740);   
+	background-size: 200%;
+	font-size: 1.2rem;
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+	text-transform: uppercase;
+	margin: 1rem 0;
+	cursor: pointer;
+	transition: .5s;
+}
+.btn:hover{
+	background-position: right;
+}
 
 
+@media screen and (max-width: 1050px){
+	.container{
+		grid-gap: 5rem;
+	}
+}
 
+@media screen and (max-width: 1000px){
+	form{
+		width: 290px;
+	}
+
+	.login-content h2{
+        font-size: 2.4rem;
+        margin: 8px 0;
+	}
+
+	.img img{
+		width: 400px;
+	}
+}
+
+@media screen and (max-width: 900px){
+	.container{
+		grid-template-columns: 1fr;
+	}
+
+	.img{
+		display: none;
+	}
+
+	.wave{
+		display: none;
+	}
+
+	.login-content{
+		justify-content: center;
+	}
+}
 </style>
 
 
@@ -72,66 +236,86 @@ form button{
 
 
 
-
 <body>
-      <!--    <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="Username">username</label>
-                <input type="text" class="form-control"  placeholder="Enter user name" name="username">
-              </div>
-              <div class="form-group">
-                <label for="Password">Password</label>
-                <input type="password" class="form-control" name="password" placeholder="Password">
-              </div>
-              <div class="form-group">
-              <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
-        </form>
+	<img class="wave" src="{%static 'img-2021/wave.png'%}">
+	<div class="container">
+		<div class="img">
+			<img src="{%static 'img-2021/social-girl.svg'%}">
+		</div>
+		<div class="login-content">
+			<form method="POST">
+				{% csrf_token %}
+				<img src="{%static 'img-2021/avatar.svg'%}">
+				<h2 class="title">WDS 7.0</h2>
+           		<div class="input-div one">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Username</h5>
+           		   		<input type="text" class="input" id="first_name" name="username">
+           		   </div>
+           		</div>
+           		<div class="input-div pass">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Password</h5>
+           		    	<input type="password" class="input" id="password" name="password">
+            	   </div>
+            	</div>
+            	<a href="#">Forgot Password?</a>
+            	<button class="btn" type="submit" name="action">Login
+					<i class="material-icons right"></i>
+				</button>
+            </form>
+        </div>
     </div>
-
-  -->
-    <!-- HEADER -->
-    <header role="banner" class="position-absolute">
-  {% include "tradingclosed/navbar.html" %}
-
-    </header>
-  <section>
-
-    <div class="container-fluid col-xl-5" style="padding:7px; ">
-
-      <div class="row main-form">
-
-          <div class="form-heading">
-              <h2>Log In to WDS</h2>
-          </div>
-          
-          <form class="col s12" method="POST">
-            {% csrf_token %}
-          <div class="row">
-              <div class="input-field col s12 form-field">
-                  <input  id="first_name" type="text" class="validate form-field"  name="username">
-                  <label for="Username">User Name</label>
-              </div>
-          </div>
+    <!-- <script type="text/javascript" src="js/main.js"></script> -->
+	<script>
+		const inputs = document.querySelectorAll(".input");
 
 
-          <div class="row">
-              <div class="input-field col s12 form-field">
-                  <input id="password" type="password" class="validate form-field" name="password">
-                  <label for="Password">Password</label>
-              </div>
-          </div>
-          
-                          
-          <button class="" type="submit" name="action">Login
-              <i class="material-icons right"></i>
-          </button>
-          </form>
-      </div>
-    </div>
-  </section>
-  
+function addcl(){
+	let parent = this.parentNode.parentNode;
+	parent.classList.add("focus");
+}
+
+function remcl(){
+	let parent = this.parentNode.parentNode;
+	if(this.value == ""){
+		parent.classList.remove("focus");
+	}
+}
+
+
+inputs.forEach(input => {
+	input.addEventListener("focus", addcl);
+	input.addEventListener("blur", remcl);
+});
+		</script>
 </body>
+<script>
+  const inputs = document.querySelectorAll(".input");
+
+
+function addcl(){
+let parent = this.parentNode.parentNode;
+parent.classList.add("focus");
+}
+
+function remcl(){
+let parent = this.parentNode.parentNode;
+if(this.value == ""){
+  parent.classList.remove("focus");
+}
+}
+
+
+inputs.forEach(input => {
+input.addEventListener("focus", addcl);
+input.addEventListener("blur", remcl);
+});
+  </script>
 {% endblock usrlgn %}

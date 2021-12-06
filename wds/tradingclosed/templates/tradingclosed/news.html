@@ -1,9 +1,9 @@
-{% extends "base.html" %}
-{% block content %}
 {% load static %}
+{% block content %}
+
 <style>
   body {
-        background-image: url("{% static 'images-2019/bg-11.jpg' %}");
+        background-image: url("{% static 'img-2021/news1.jpeg' %}");
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -33,22 +33,24 @@
 }
 h1 {
     font-size:4rem;
-    color: #FF8C42;
+    color: #c21b6f;
     font-weight: bold;
     margin-top: 15vh;
     margin-bottom: 10px;
     padding:10px;
     z-index: 1 !important;
+    font-family: 'Irish Grover', cursive;
+font-family: 'Lato', sans-serif;
 }
 
-.bg{
+.backg{
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0);
     height:90vh;
    
     margin-bottom: 100px;
 }
-.bg p{
+.backg p{
     color: white !important;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     margin-bottom: 20px !important;
@@ -65,11 +67,11 @@ h1 {
     h1{
     margin-top: 9vh;
 }
-.bg{
+.backg{
     height:75vh;
     margin-bottom: 80px;
 }
-.bg p{
+.backg p{
     font-size: 1.5rem;
     width:80%;
 }
@@ -87,11 +89,11 @@ h1 {
     h1{
     margin-top: 4vh;
 }
-.bg{
+.backg{
     height:55vh;
     margin-bottom: 80px;
 }
-.bg p{
+.backg p{
     font-size: 1.5rem;
     width:80%;
 }
@@ -109,11 +111,11 @@ h1 {
 h1{
     margin-top: 8vh;
 }
-.bg{
+.backg{
     height:60vh;
     margin-bottom: 80px;
 }
-.bg p{
+.backg p{
     font-size: 1rem;
     width:80%;
 }
@@ -132,11 +134,11 @@ h1{
 
 
 <body>
-
-        <!-- Top Navigation -->
-    {% include "tradingclosed/navbar.html" %}
+    <section class="header">
+        {% include 'tradingclosed/navbar.html' %}
+      </section>
     </header>
-    <div class="container bg">
+    <div class="container backg">
         <h1>NEWS</h1>
        
                 <p class="card-text">Stock Market is not all about trading.How well you understand your surroundings will decide whether you gain or lose.So watch the NEWS carefully!</p>
@@ -151,6 +153,9 @@ h1{
         </div>
     </div>
 {% include "footer.html" %}
+<script>
+    
+</script>
 </body>
 
 

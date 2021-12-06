@@ -1,61 +1,97 @@
-{% load static %}
+ {% load static %}
+
 <!DOCTYPE html>
 <html>
-<head>
-    <link href="https://fonts.googleapis.com/css?family=Teko:700&display=swap" rel="stylesheet">
-
-    <title>
-        Trading closed
-    </title>
-
-<style>
-
-
-body {
-    background-image: url("{% static './images-2019/close6.jpg'%}");
-    background-attachment: fixed;
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Monoton&display=swap" rel="stylesheet">
+    <style>
+    body{
+        background: url("{% static 'img-2021/th.jpeg'%}");
+        background-attachment: fixed;
     background-position: center;
-    background-repeat: no-repeat;
+
     background-size: cover;
-    color: #4dbc56;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: center;
-    justify-items: center;
-}
-    h1 {
-    margin:0;
-    padding-bottom: 6rem;
-    grid-column: 1;
-    grid-row: 1;
-    z-index: 1;
-    font-family: 'Teko', sans-serif;
-    font-size: 10rem;
-    text-transform: uppercase;
-    animation: glow 2s ease-in-out infinite alternate;
-    text-align: center;
-  }
-.container{
-    margin-top: 200px;
-}
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 20px #2da96f;
     }
-    to {
-      text-shadow: 0 0 30px #34c17f, 0 0 10px #4dc79e;
-    }
+        
+        hr {
+
+        top: 100px;
+        border: none;
+        height: 100px;
+        /* background: black;         
+        transform: rotate(23deg) ; */
+        background:repeating-linear-gradient(
+            90deg,
+  #000000,
+  #000000 45px,
+  #ebfb06 45px,
+  #ebfb06 90px
+        )
+        
+        }
+
+        h2{
+           
+            font-family: 'Indie Flower', cursive;
+            font-family: 'Monoton', cursive;
+            font-size: 50px;
+            /* margin-top: 275px; */
+            color: rgb(199, 41, 41);
+            text-align: center;
+            animation: abcd 18s infinite;
+        }
+        @keyframes abcd{
+            0%{margin-left:100px;}
+            10%{margin-left:50px;}
+            20%{margin-right:100px;}
+            30%{margin-right:50px;}
+            40%{margin-left:100px;}
+            50%{margin-left:50px;}
+            60%{margin-right:100px;}
+            70%{margin-right:50px;}
+            80%{margin-left:100px;}
+            90%{margin-left:50px;}
+            100%{margin-right:100px;}
+            
+            
+        }
+
+
+.skills, .langs {
+  text-transform:uppercase;
+  font-size:2vw;
+  display: inline-block;
+  white-space: nowrap;
+  animation: floatText 25s infinite linear;
+  padding-left: 100%; /*Initial offset, which places the text off-screen*/
+  color:#ada97d;
+}
+@keyframes floatText {
+  to {
+    transform: translateX(-100%);
   }
+}
 
-</style>
-    <body>
-        <div class="container">
-            <h1><span class='one'>t</span><span class='two'>r</span><span class='three'>a</span><span class='four'>d</span><span class='five'>i</span><span class='six'>n</span><span class='six'>g</span> <span class='six'>c</span><span class='six'>l</span><span class='six'>o</span><span class='six'>s</span><span class='six'>e</span><span class='six'>d</span></h1>
+.skills:hover, .langs:hover  {
+  animation-play-state: paused;
+}
 
-        </div>
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+    </head>    
 
-    </body>
+<body>
 
+    <hr style="margin-top: 100px;"/>   
+
+    <div class="skills">
+       <h2> TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED  </h2>
+      </div>
+      <div class="langs">
+        <h2> TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED </h2>
+  </div>
+  <hr />
+</body>
 </html>

@@ -1,180 +1,224 @@
-{% load static %}
-        <!-- ---------- FOOTER --------- -->
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Spectral+SC:ital,wght@0,700;1,500&display=swap');
-    *{
-      margin: 0; padding: 0;
-      box-sizing: border-box;
-    }
+  <title>Footer Design</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="footer.css"> -->
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> -->
+	<style>
+		@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+		@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+	line-height: 1.5;
+	font-family: 'Poppins', sans-serif;
+}
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+}
+.container1{
+	max-width: 1170px;
+	margin:auto;
+}
+.row1{
+	display: flex;
+	flex-wrap: nowrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+    padding: 70px 0;
+}
+.footer-col{
+   width: 50%;
+   padding: 0 100px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #ffffff;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-col .social-links1 a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links1 a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
 
-    footer{
-      background: #232529;
-      width: 100vw;
-      height: 25vh;
-      /* padding: 20px; */
-    }  
 
-    footer .allcontent{
-      display: flex;
-      flex-flow: column;
-    }
-
-    .rows {
-      background: #232529;
-      display: flex;
-      flex-flow: row;
-      text-align: center;
-    }
-    .rows .cont {
-      width: 33.33%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .rows .team{
-      margin: 0 auto;
-
-    }
-    .rows .team a{
-      color: #f5a976;
-    }
-    .rows .team a:hover{
-      color: #2e9aea;
-    }
-    /* ----------------------- logo and contact details ----------------------- */
-
-    
-    .econ-logo img{
-      height: 20vh;
-    }
-    
-    .cont .techSupport h5{
-        color: #FCAF58;
-        font-size: 2rem;
-        font-family: 'Spectral SC', serif;
-    }
-
-    /* ----------------------- Links ----------------------- */
-    .facebook{
-      background: #3b5998; 
-    }
-    .facebook:hover i{
-      color: #3b5998;
-      background: white;
-    }
-
-    .linkedin:hover i{
-      color: #0082ca;
-      background: white;
-    }
-    .youtube:hover i{
-      color: #ff0000;
-      background: white;
-      
-    }
-    .btn-instagram{
-      
-    }
-    .btn-instagram:hover i{
-      background: white;
-      
-    }
-    .btn-instagram:hover i{
-      color: #dc2c92;
-    }
-      @media (max-width:720px ){
-        footer{
-          height: 25vh;
-        }
-        footer .rows {
-          flex-flow: column;
-          padding: 0 20px;
-        }
-        footer .rows .cont{
-          width: 100%;
-          padding: 30px 0;
-          border-bottom: 1px solid #383b3f;
-        }
-
-        /* logo */
-        .econ-logo img{
-          height: 30vh;
-        }
-        
-        .rows .team{
-          padding: 20px;
-        }
-      }
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
 
 
 
 
-  </style>
+
+
+
+
+
+
+.footer-colm{
+	width: 25%;
+	padding: 0 15px;
+ }
+ .footer-colm h4{
+	 font-size: 18px;
+	 color: #ffffff;
+	 text-transform: capitalize;
+	 margin-bottom: 35px;
+	 font-weight: 500;
+	 position: relative;
+ }
+ .footer-colm h4::before{
+	 content: '';
+	 position: absolute;
+	 left:0;
+	 bottom: -10px;
+	 background-color: #e91e63;
+	 height: 2px;
+	 box-sizing: border-box;
+	 width: 50px;
+ }
+ .footer-colm ul li:not(:last-child){
+	 margin-bottom: 10px;
+ }
+ .footer-colm ul li {
+	 font-size: 16px;
+	 text-transform: capitalize;
+	 color: #ffffff;
+	 text-decoration: none;
+	 font-weight: 300;
+	 color: #bbbbbb;
+	 display: block;
+	 transition: all 0.3s ease;
+ }
+ .footer-colm ul li a:hover{
+	 color: #ffffff;
+	 padding-left: 8px;
+ }
+ .footer-colm .social-links1 a {
+	 display: inline-block;
+	 height: 40px;
+	 width: 40px;
+	 background-color: rgba(255,255,255,0.2);
+	 margin:0 10px 10px 0;
+	 text-align: center;
+	 line-height: 40px;
+	 border-radius: 50%;
+	 color: #ffffff;
+	 transition: all 0.5s ease;
+ }
+ .footer-colm .social-links1 a:hover{
+	 color: #24262b;
+	 background-color: #ffffff;
+ }
+
+
+/*  
+ /responsive/ */
+ @media(max-width: 767px){
+   .footer-colm{
+	 width: 50%;
+	 margin-bottom: 30px;
+	 /* logo */
+ }
+ @media(max-width: 574px){
+   .footer-colm{
+	 width: 100%;
+ }
+ }
+	</style>
 
 </head>
+<body>
 
-
-
-
-
-<!-- Footer -->
-<footer>
-  
-  <div class="allcontent">
-    <div class="rows">
-      <div class="econ-logo cont">
-        <a href="https://sites.google.com/view/econclub/about?authuser=0/"><img src="{% static 'images-2019/econ-logo.png' %}" class=" "></a>
-      </div>
+  <footer class="footer">
+  <div class="container1">
+    <div class="row1">
       
-        <!-- Social buttons -->
-      <div class="cont">
-          <ul class="">
-            <li class="list-inline-item">
-              <a class="btn-floating mx-1 facebook" href="https://www.facebook.com/econthapar" style="background: #3b5998; ">
-                <i class="fa fa-facebook-f"> </i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-youtube mx-1 youtube" href="https://www.youtube.com/channel/UCnyVX3sGVJEno_WwLouHXtA" style="background: #ff0000;">
-                <i class="fa fa-youtube-play" aria-hidden="true"></i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a class="btn-floating btn-li mx-1 linkedin" href="https://www.linkedin.com/company/econclub/" style="background: #0082ca;">
-                <i class="fab fa-linkedin-in"> </i>
-              </a>
-            </li>
-            <li class="list-inline-item">
-              <a href="https://www.instagram.com/econ_tiet/"  class="btn-floating btn-instagram mx-1 instagram" style="background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);">
-                <i class="fab fa-instagram"> </i>
-              </a>
-            </li>
-          </ul> 
+  	 		<div class="footer-col">
+  	 			<h4>Get Help</h4>
+  	 			<ul>
+            <li><a href='https://drive.google.com/file/d/1U1O9yaAWVwK1XZc2LzHZ0roBRDJUXFXY/view'>Rules</a></li>
 
-      </div> 
-
-      <div class="cont">
-        <div class="techSupport" >
-          <h5 class="">Technical Support</h5>
-          <ul class="">
-            <li> +91 9877184936</li>
-            <li> +91 9958141502</li>
-          </ul>
-        </div>
-      </div>  
-
-  </div>
-
-
-
-  <div class="rows">
-    <div class="team">
-      <a href="https://sites.google.com/view/econclub/about?authuser=0/" style="font-family: 'Cardo', serif;">&copy; DEVELOPED BY TEAM ECON</a>
-    </div>
-  </div>
-</div>
-</footer>
-<!-- Footer -->
+             
+  	 				<li><a href="#">FAQ</a></li>
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>Technical Support</h4>
+  	 			<ul>
+  	 				<li><a> Mb: 99148****0 </a></li>
+  	 				<li><a> Email: econ@thapar.edu </a></li>
+  	 				<!-- <li><a href="#">shoes</a></li>
+  	 				<li><a href="#">dress</a></li> -->
+  	 			</ul>
+  	 		</div>
+  	 		<div class="footer-col">
+  	 			<h4>follow us</h4>
+  	 			<div class="social-links1">
+  	 				<a href="https://www.facebook.com/econthapar"><i class="fab fa-facebook-f"></i></a>
+  	 				<a href="https://www.youtube.com/channel/UCnyVX3sGVJEno_WwLouHXtA"><i class="fab fa-youtube"></i></a><br>
+  	 				<a href="https://www.instagram.com/econ_tiet/"><i class="fab fa-instagram"></i></a>
+  	 				<a href="https://www.linkedin.com/company/econclub/"><i class="fab fa-linkedin"></i></a>
+  	 			</div>
+  	 		</div>
+  	 	</div>
+  	 </div>
+  </footer>
+</body>
+</html>

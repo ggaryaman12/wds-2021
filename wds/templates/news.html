@@ -1,9 +1,8 @@
-{% extends 'base.html' %}
 {% block content %}
 {% load static %}
 <style>
   body {
-        background-image: url("{% static 'images-2019/bg-11.jpg' %}");
+        background-image: url("{% static 'img-2021/news1.jpeg' %}");
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
@@ -33,17 +32,19 @@
 }
 h1 {
     font-size:4rem;
-    color: #FF8C42;
+    color: #c21b6f;
     font-weight: bold;
     margin-top: 15vh;
     margin-bottom: 10px;
     padding:10px;
     z-index: 1 !important;
+    font-family: 'Irish Grover', cursive;
+font-family: 'Lato', sans-serif;
 }
 
 .bg{
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0);
     height:90vh;
    
     margin-bottom: 100px;
@@ -133,8 +134,7 @@ h1{
 
 <body>
 
-        <!-- Top Navigation -->
-    {% include "navbar.html" %}
+    {% include 'navbar1.html' %}
     </header>
     <div class="container bg">
         <h1>NEWS</h1>
@@ -151,6 +151,9 @@ h1{
         </div>
     </div>
 {% include "footer.html" %}
+<script>
+    
+</script>
 </body>
 
 
