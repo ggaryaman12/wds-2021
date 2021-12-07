@@ -1,97 +1,100 @@
  {% load static %}
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Monoton&display=swap" rel="stylesheet">
-    <style>
-    body{
-        background: url("{% static 'img-2021/th.jpeg'%}");
-        background-attachment: fixed;
-    background-position: center;
+ {% load static %}
 
-    background-size: cover;
-    }
-        
-        hr {
-
-        top: 100px;
-        border: none;
-        height: 100px;
-        /* background: black;         
-        transform: rotate(23deg) ; */
-        background:repeating-linear-gradient(
-            90deg,
-  #000000,
-  #000000 45px,
-  #ebfb06 45px,
-  #ebfb06 90px
-        )
-        
-        }
-
-        h2{
-           
-            font-family: 'Indie Flower', cursive;
-            font-family: 'Monoton', cursive;
-            font-size: 50px;
-            /* margin-top: 275px; */
-            color: rgb(199, 41, 41);
-            text-align: center;
-            animation: abcd 18s infinite;
-        }
-        @keyframes abcd{
-            0%{margin-left:100px;}
-            10%{margin-left:50px;}
-            20%{margin-right:100px;}
-            30%{margin-right:50px;}
-            40%{margin-left:100px;}
-            50%{margin-left:50px;}
-            60%{margin-right:100px;}
-            70%{margin-right:50px;}
-            80%{margin-left:100px;}
-            90%{margin-left:50px;}
-            100%{margin-right:100px;}
-            
-            
-        }
-
-
-.skills, .langs {
-  text-transform:uppercase;
-  font-size:2vw;
-  display: inline-block;
-  white-space: nowrap;
-  animation: floatText 25s infinite linear;
-  padding-left: 100%; /*Initial offset, which places the text off-screen*/
-  color:#ada97d;
-}
-@keyframes floatText {
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-.skills:hover, .langs:hover  {
-  animation-play-state: paused;
-}
-
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
-    </head>    
-
-<body>
-
-    <hr style="margin-top: 100px;"/>   
-
-    <div class="skills">
-       <h2> TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED  </h2>
-      </div>
-      <div class="langs">
-        <h2> TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED • TRADING CLOSED </h2>
-  </div>
-  <hr />
-</body>
-</html>
+ <!DOCTYPE html>
+ <html>
+     <head>
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Monoton&display=swap" rel="stylesheet">
+     <style>
+ 
+     *{
+          background:#c3073f;
+          margin: 0 0;
+      } 
+ 
+     body{
+         overflow-x: hidden;
+         margin: -10px 0;
+     } 
+      
+     .bg {
+         position: absolute;
+         height: 250px;
+         width: 100%;
+         margin-left: 0px;
+         margin-top: -100px;
+         background-color: black;
+     }
+ 
+     .bg::before {
+         content: '';
+         display: block;
+         position: absolute;
+         border-radius: 100% 50%;
+         width: 55%;
+         height: 100%;
+         background-color: #c3073f;
+         transform: translate(81.7%, 70%);
+     }
+ 
+     .bg::after {
+         content: '';
+         display: block;
+         position: absolute;
+         border-radius: 100% 50%;
+         width: 55%;
+         height: 100%;
+         background-color: black;
+         transform: translate(-0.5%, 37%);
+         z-index: 99;
+     }
+ 
+     .text-box{
+         color:black;
+         position:absolute;
+         bottom: 10%;
+         left: 2%;
+     }
+ 
+     .text-box h2{
+         font-size: 100px;
+         line-height: 75px;
+         margin-left: -2%;
+         margin-bottom: 10px;
+         color: transparent;
+         -webkit-text-stroke: 2px black;
+         background: url("/static/img-2021/closed.png");
+         -webkit-background-clip: text;
+         background-position:0 0;
+         animation: back 20s linear infinite;
+     }
+ 
+     @keyframes back{
+         100%{
+             background-position: 2000px 0;
+         }
+     }
+ 
+     .text-box h4{
+         font-size: 20px;
+         margin-top: 10px;
+         letter-spacing: 1.5px;
+     }
+ 
+     </style>
+     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap" rel="stylesheet">
+     </head>    
+ 
+ <body>
+ 
+     <div class="bg"></div>
+     <div class="text-box">
+        <h2>TRADING <br> CLOSED</h2>
+        <h4>STAY TUNED UNTIL THE MARKET REOPENS.</h4>
+     </div>
+     
+ </body>
+ </html>
