@@ -1,3 +1,4 @@
+{% load static %}
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -332,114 +333,111 @@ section{
 ::-webkit-scrollbar-thumb {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
 }
-@media screen and (max-width: 768px) {
-  .tbl-header thead th{
-     font-size: 15px;
-  }
-  .tbl-content tbody td{
-    font-size: 13px !important;
-  }
-  .tbl-content tbody td:nth-child(2) p{
-    font-size: 10px !important;
-  }
-  .tbl-content tbody td:nth-child(1) p{
-    font-size: 12px !important;
-  }
-}
-@media screen and (max-width: 500px) {
-  .tbl-header thead th p{
-     font-size: 9px;
-     position: relative;
-     right: 9px;
-  }
-  .tbl-header thead th:nth-child(1){
-    position: relative;
-    right: 4px;
-  }
-  .tbl-header thead th:nth-child(2){
-    position: relative;
-    right: 4px;
-  }
-  .tbl-header thead th:nth-child(4){
-    position: relative;
-    right: 5px;
-  }
-  .tbl-content tbody td{
-    
-    font-size: 13px !important;
-  }
-  .tbl-content tbody td:nth-child(2) p{
-   position: relative;
-   right: 24px !important;
-    font-size: 8px !important;
-  }
-  .tbl-content tbody td:nth-child(1) p{
-    font-size: 9px !important;
-    position: relative;
-    right: 5px;
-  }
-  .tbl-content tbody p{
-    position: relative;
-    right: 10px !important;
-  }
-}
+
   </style>
 </head>
 
 <body>
   
-  {% include 'international/dashnav.html' %}
+  <nav class="navbar">
+    <ul class="navbar-nav">
+      <li class="logo">
+        <a href="#" class="nav-link">
+          <span class="link-text logo-text">DASHBOARD</span>
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            data-prefix="fad"
+            data-icon="angle-double-right"
+            role="img"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 448 512"
+            class="svg-inline--fa fa-angle-double-right fa-w-14 fa-5x"
+          >
+            <g class="fa-group">
+              <path
+                fill="currentColor"
+                d="M224 273L88.37 409a23.78 23.78 0 0 1-33.8 0L32 386.36a23.94 23.94 0 0 1 0-33.89l96.13-96.37L32 159.73a23.94 23.94 0 0 1 0-33.89l22.44-22.79a23.78 23.78 0 0 1 33.8 0L223.88 239a23.94 23.94 0 0 1 .1 34z"
+                class="fa-secondary"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M415.89 273L280.34 409a23.77 23.77 0 0 1-33.79 0L224 386.26a23.94 23.94 0 0 1 0-33.89L320.11 256l-96-96.47a23.94 23.94 0 0 1 0-33.89l22.52-22.59a23.77 23.77 0 0 1 33.79 0L416 239a24 24 0 0 1-.11 34z"
+                class="fa-primary"
+              ></path>
+            </g>
+          </svg>
+        </a>
+      </li>
 
-  <main>
-
-    <!-- ******************** Table ****************** -->
-
-    <section style="padding-left: 5%; padding-right: 5%; width: 90%;">
-      <!--for demo wrap-->
-      <h1>Transactions Log</h1>
+      <div class="team-info nav-item">
+        <img src= "{% static 'img-2021/01.png' %}" width="40" height="40">
+        <div class="team-name link-text"><h2>{{ user.username }}</h2></div>
+        <div class="team-balance link-text">    
+          {% for dd in dashdata %}
+	        <h5>Team Balance {{ dd.userbalance }}</h5>
+	        {% endfor %}
+          
+        </div>
+      </div>
+      <br>
+      <li class="nav-item">
+        <a href="{% url 'international:dashboard' %}" class="nav-link">
+          <img src="{% static 'img-2021/05.png' %}" width="40" height="40">
+          <span class="link-text">Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'international:stocks' %}" class="nav-link">
+          <img src="{% static 'img-2021/04.png' %}" width="40" height="40">
+          <span class="link-text">Stock Market</span>
+        </a>
+      </li>
       
-      <div class="tbl-header" >
-        <table cellpadding="0" cellspacing="0" border="0">
-          <thead >
-            <th><p>Sender</p></th>
-            <th><p>Receiver</p></th>
-            <th><p>Type</p></th>
-            <th><p>Stock</p></th>
-            <th><p>Number of Stocks</p></th>
-            <th><p>Price per Stock</p></th>
-          </thead>
-        </table>
-      </div>
-      <div class="tbl-content">
-        <table cellpadding="0" cellspacing="0" border="0">
-          <tbody>
-            {% for req in requests %}
-        
-                <tr>
-                    <td>{{ req.sender }}</td>
-                    <td>{{ req.receiver }}</td>
-                    <td>{{ req.action }} </td>
-                    <td>{{ req.stock }} </td>
-                    <td>{{ req.numberofstocks }}</td>
-                    <td>{{ req.priceperstock }}</td> 
-                    <!--<td>{{ req.status }}</td>-->
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-      </div>
-    </section>
-    
-    
-    <!-- <h1>CSS is Cool</h1> -->
+      <li class="nav-item">
+        <a href="{% url 'international:createrequest' %}" class="nav-link">
+          <img src="{% static 'img-2021/02.png' %}" width="40" height="40">
+          <span class="link-text">Create Trade Request</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="{% url 'international:sentreq' %}" class="nav-link">
+          <img src="{% static 'img-2021/03.png' %}" width="40" height="40">
+          <span class="link-text">Requests Sent</span>
+        </a>
+      </li>
 
-    <!-- <p>
-      I'm baby kale chips affogato ennui lumbersexual, williamsburg paleo quinoa
-      iceland normcore tumeric. Kitsch coloring book retro, seitan schlitz
-      tattooed biodiesel vexillologist neutra. Synth mumblecore deep v, umami
-      selfies normcore gluten-free snackwave. Seitan ramps drinking vinegar
-      venmo keytar, humblebrag VHS post-ironic tacos godard pour-over.
-    </p> -->
-     
-  </main>
+      <li class="nav-item">
+        <a href="{% url 'international:receivedreq' %}" class="nav-link">
+          <img src="{% static 'img-2021/04.png' %}" width="40" height="40">
+          <span class="link-text">Requests Received</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{% url 'international:transaction-history' %}" class="nav-link">
+          <img src="{% static 'img-2021/05.png' %}" width="37" height="37">
+          <span class="link-text">Sent Request Status </span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="{% url 'international:transaction-log' %}" class="nav-link">
+          <img src="{% static 'img-2021/06.png' %}" width="40" height="40">
+          <span class="link-text">Transactions</span>
+        </a>
+      </li>
+
+      <li class="nav-item" id="themeButton">
+        <a href="{% url 'international:report' %}" class="nav-link">
+          <img src="{% static 'img-2021/06.png' %}" width="45" height="40">
+          <span class="link-text">Insider</span>
+        </a>
+      </li>
+
+      
+
+    </ul>
+  </nav>
+
 </body>

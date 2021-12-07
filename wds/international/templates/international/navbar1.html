@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+
+<style>
+
+* {
+  box-sizing:border-box ;
+  margin:0;
+}
+
+nav{
+  background: none;
+  display: flex;
+  padding-right:6%;
+  padding-left:6%;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-links{
+  flex:1;
+  text-align: right;
+  font-family: Lato;
+  font-weight: Regular;
+  z-index:999;
+  margin-right: 4%;
+}
+.nav-links ul {
+  margin-top:20px;
+}
+.nav-links ul li{
+  list-style:none;
+  display:inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.nav-links ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
+.nav-links ul li::after{
+  content:'';
+  width: 0%;
+  height: 2px;
+  background :white;
+  display: block;
+  margin: auto;
+  transition: 0.4s;
+}
+.nav-links ul li:hover::after{
+  width:100%;
+}
+
+@media(max-width:700px){
+
+  .nav-links{
+    margin-right: -10px;
+  }
+
+  .nav-links ul {
+    margin-top:25px;
+  }
+
+}
+
+@media(max-width:360px){
+
+.nav-links{
+  margin-right: 0px;
+}
+
+.nav-links ul {
+  margin-top:40px;
+  margin-right: -8px;
+
+}
+
+.nav-links ul li a{
+  font-size: 13px;
+}
+
+.nav-links ul li{
+  padding: 5px 5px
+}
+
+
+
+.home-menu{
+  margin-right: 80px;
+}
+
+}
+
+
+</style>
+</head>
+<body>
+    <div class="navbar"></div>
+        <section class="header">
+          <nav>
+             <a href="index.html" img src={% static 'img-2021/home-picture.jpg' %}></a>
+             <div class="nav-links">
+                 <ul>
+                    <li>      
+                      {% csrf_token %}
+                      {% if user.is_staff %}
+                      <a href="{% url 'admin:index' %}">&nbsp Admin </a>
+                      {% endif %}
+                     </li>
+                     <li>
+                      
+                      <a href="{% url 'international:home' %}">Home</a>
+                      
+                     </li>
+                     <li>
+                      <a href="{% url 'international:stocks' %}">&nbsp Stocks</a>
+                     </li>
+                     {% if user.is_authenticated %}
+                        <li><a href="{% url 'international:news' %}">&nbsp News</a></li>
+                        <li><a href="{% url 'international:dashboard' %}">&nbsp Dashboard</a></li>
+                        <li><a href="{% url 'international:userlogout' %}">&nbsp Logout</a></li>
+                        {% else %}
+                        <li><a href="{% url 'international:news' %}">&nbsp News</a></li>
+                        <li><a href="{% url 'international:userlogin' %}">&nbsp Login</a></li>
+                      {% endif %}
+                 </ul>
+             </div>  
+         </nav>
+       </section>
+    </div>
+</body>  

@@ -1,97 +1,39 @@
-{% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% block content %}
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,700&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Lato:ital,wght@0,300;1,700&display=swap"
+        rel="stylesheet">
+    <title>Report</title>
     <style>
-            
-        *{
-            margin: 0; padding: 0;
-            box-sizing: border-box;
-        }
-
         body{
-            background: #00000f;
-        }
-        .main-page{
-            display: flex;
-            height: 100%;
-        }
+    color: black;
+    background: linear-gradient(to right,black , rgb(27, 2, 18));
+}
+.bod{
+    /* padding-top: 3% ;
+    padding-left: 10%; */
 
-            
-    /*   ---------------------------    SIDE BAR   -------------------------------- */
-    .side-bar-wrapper {
-        width: 17vw;
-        /* height: 95vh; */
-        margin: 5vh 0;
-        
-        color: #FCAF58;
-        padding: 0 10px 0 0px;
-        border-right: 2px solid white;
-    }
-    
-    /*   -------------- team info  ------------- */
-    
-    .side-bar-wrapper .team-info{
-        /* background: #212646; */
-        text-align: center;
-        margin: 10px;
-        padding: 5px 10px 20px 10px;
-        border-radius: 30px;
-        /* box-shadow: 3px 3px 15px 0 #212646; */
-        box-shadow: 1px 1px 15px 0 #00000f;
-        
-        
-    }
-    .side-bar-wrapper .team-info .team-name h2{             /*  name size */
-        font-size: 2rem;
-        font-weight: bolder;
-        margin-bottom: 25px;
-        color: #FCAF58;
-        font-family: 'Sanchez', serif;
-        text-transform: uppercase;
-    }
+    text-align: center;
 
-    
-    
-    
-    /*   ---------------- Buttons  -------------- */
-    .requestButtons{
-        margin-top: 30px;
-    }
-    .requestButtons .req-btn{
-        margin-bottom: 10px;
-        display: flex;
-        flex-flow: column;
-    }
-    .requestButtons .req-btn  {
-        margin-left: 10px;
-        border-bottom: 1.5px solid #212646;
-        text-align: center;                     /* links to center */
-    }
-    .requestButtons .req-btn:hover{
-        cursor: pointer;
-        text-align: center;               
-    }
-    .requestButtons .req-btn a{
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        padding: 15px 10px;
-        color: whitesmoke;
-    
-    }
-    .requestButtons .req-btn a:hover{
-        text-align: center;               /* links to center on hovering */
-    }
-    
-
-
-        /*  ------------------------ Main ------------------------  */
-
-
-        /* ---------- section ---------- */
-    .table-section{
-        /* padding: 0 5rem; */
+}
+.table-section{
         width: 50vw;
         height: 60vmin;
         margin: 5vh auto;
@@ -104,7 +46,7 @@
         text-align: center;
         font-size: 2rem;
         font-weight: 500;
-        color: #FCAF58;
+        color: #ffffff;
     }
 
         /* -------------- table -------------- */
@@ -115,9 +57,8 @@
         .table-section p{
             color: #fff;
             font-size: 1.2rem;
-            line-height: 20px;
+            
         }
-        
 
         form{
             width: 70%;
@@ -146,197 +87,79 @@
             
         }
 
-
-
-
-
-
-
-
-
-    /* ----------------- side bar accordian ----------------- */
-	.side-bar-caret{
-  display: none;
-  font-size: 30px;
-  color: #FCAF58;
-}
-
-
-.card, .card-body{
-  padding: 0;
-}
-.side-bar-wrapper-acc {
-      width: 100%;
-      color: #FCAF58;
-      background: #000;
-  }
-  .team-info-acc{
-    display: none;
-  }
-
-.side-bar-wrapper-acc{
-      background: #000000;
-      text-align: center;
-      width: 100vw;
-      padding: 5px 10px 20px 0px;
-}
-
-  .team-info-acc .team-name h2{             /*  name size */
-      font-size: 2rem;
-      font-weight: bolder;
-      margin-bottom: 25px;
-      color: #FCAF58;
-      font-family: 'Sanchez', serif;
-      text-transform: uppercase;
-      text-align: center;
-  }
-  .team-info-acc .team-balance h5 {
-      font-size: 1.1em;
-      color:  #f5a976;
-      line-height: 1.5rem;
-      margin: 0 10%;
-      text-align: center;
-      font-family: 'Sanchez', serif;
-  }
-  .req-btn a{
-    color: #fff;
-  }
-  
-
-  input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
-    color: white;
-}
-
-  
-  @media (max-width: 720px) {
-
-    .main-page{
-      display: block;
-	  width: 100vw;
-      padding-bottom: 50px;
-    }
-    .side-bar-wrapper{
-      display: none;
-    }
-    .team-info-acc{
-      display: block;
-    }
-
-
-    .side-bar-caret{
-      display: flex;
-      width: 20%;
-      justify-content: center;
-      align-items: center;
-    }
-
-  
-    .table-section p{
-        text-align: center;
-        word-spacing: 5px;
-        line-height: 20px;
-    }
+.H1{
+    color: aliceblue;
     
+    font-family: 'Lato', sans-serif;
+    font-size: 45px;
+}
+.H2{
+    color: aliceblue;
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+}
+.p1{
+    color:beige;
+    font-size: 25px;
+    font-family: 'Lato', sans-serif;
+}
 
-  }
 
+.btn{
+    background:none;
+    position: absolute;
+ 
+    transform: translate(-50%,-50%);
+    color: aqua;
+    border: 5px solid;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 100px;
+    transition: 1.5s;
+}
 
+.btn:hover{
+    box-shadow: 0 5px 50px 0 aqua inset, 0 5px 50px 0 aqua;
 
-
-        </style>
+}
+    </style>
 </head>
-
-
 <body>
-    
-<section class="main-page">
+  <section>
+    {%include 'international/dashnav.html'%}
+  </section>
 
+  
+    <div class= "bod">
 
-
-
-    <!-- ---------------------------- accordian ---------------------------- -->
-    <div class="team-info-acc">
-        <div class="team-name"><h2>{{ user.username }}</h2></div>
-        <div class="team-balance">    
-          {% for dd in dashdata %}
-          <h5>Team Balance {{ dd.userbalance }}</h5>
-          {% endfor %}
-        </div>
-      </div>
-    
-    
-        <a class="side-bar-caret" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-          <i class="fa fa-angle-down" style="color: #FCAF58;"></i>
-        </a>
-        
-      <div class="collapse" id="collapseExample">
-        <div class="">
-          <div class="side-bar-wrapper-acc">
-            <div class="requestButtons">
-     
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:dashboard' %}">Dashboard</a></div>
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:createrequest' %}">Create Trade Request</a></div>
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:sentreq' %}">Requests Sent</a></div>
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:receivedreq' %}">Received Requests</a></div>
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:transaction-history' %}">Sent Requests Status</a></div>
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:transaction-log' %}">Transactions</a></div>
-                <div class="req-btn"><a class="btn-insider" href="{% url 'international:report' %}" style="color:#f8bd95">Report (Insider Trading)</a></div>
-            
-                
-                <div class="req-btn"><a class="btn-insider" href="https://unh.zoom.us/j/95053387491?pwd=aTZ6d0xUOGlSTXBwQUxBVWJ6WHBudz09">Insider Trading</a></div>
-            </div>
-          
-      </div>
-        </div>
-      </div>
-    
-
-
-
-
-
-
-    <div class="side-bar-wrapper">
-                
-        <div class="team-info">
-        <div class="team-name"><h2>{{ user.username }}</h2></div>
-        <div class="team-balance">    
-            {% for dd in dashdata %}
-            <h5>Team Balance {{ dd.userbalance }}</h5>
-            {% endfor %}
-        </div>
-        </div>
-
-        <div class="requestButtons">
-     
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:dashboard' %}">Dashboard</a></div>
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:createrequest' %}">Create Trade Request</a></div>
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:sentreq' %}">Requests Sent</a></div>
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:receivedreq' %}">Received Requests</a></div>
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:transaction-history' %}">Sent Requests Status</a></div>
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:transaction-log' %}">Transactions</a></div>
-        <div class="req-btn"><a class="btn-insider" href="{% url 'international:report' %}" style="color:#f8bd95">Report (Insider Trading)</a></div>
-    
-        
-        <div class="req-btn"><a class="btn-insider" href="https://unh.zoom.us/j/95053387491?pwd=aTZ6d0xUOGlSTXBwQUxBVWJ6WHBudz09">Insider Trading</a></div>
+    <div class="cen">
+    <div class="H2">
+        <h2>INSIDER TRADING</h2>
     </div>
+    <div class="p1">
+         
+        <div class= "container">
 
+             <button class="btn" onclick="window.location.href='https://www.google.co.in/';" >INSIDER TRADING </button>
+        </div>
+
+       
     </div>
-
-
+    </div>
+    <br><br><br><br>
     <div class="table-section">
         
-            <h1>Report</h1>
-            <p>In case a team has been correctly reported for insider trading they will incur a fine of 5000 units of money.</p>
-            <p>But if the report turns out to be unsuccessful the reporting team will incur a fine of 1500 units of money.</p>
-            <form method='POST' enctype="\application/x-www-form-urlencoded">
-                {% csrf_token %}
-                {{ form|crispy }}
-                <button type="submit" class="">Submit</button>
-            </form>
+        <h1><b>REPORT INSIDER TRADING</b></h1>
+        <p>In case a team has been correctly reported for insider trading they will incur a fine of 5000 units of money.</p>
+        <p>But if the report turns out to be unsuccessful the reporting team will incur a fine of 1500 units of money.</p>
+        <form method='POST' enctype="\application/x-www-form-urlencoded">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <button type="submit" class="">Submit</button>
+        </form>
     
     </div>
 
-</section>
 </body>
-{% endblock content %}
+</html>
