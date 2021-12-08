@@ -4,13 +4,14 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-<title>WDS HomePage</title>
+<title>WDS Home</title>
 <style>
 * {
   box-sizing:border-box ;
   margin:0;
 }
 body {
+  overflow-x: hidden;
   background: black;
   font-size: 16px;
 }
@@ -26,7 +27,7 @@ body {
 }
 .black-bg {
   width: 40%;
-  height: 100%;
+  height: 600px;
   background: rgba(0,0,0,1);
   opacity: 1;
   position: absolute;
@@ -37,7 +38,7 @@ body {
 }
 .red-bg {
   width: 60%;
-  height: 100%;
+  height: 600px;
   background: rgba(195,7,63,1);
   opacity: 1;
   position: absolute;
@@ -46,9 +47,10 @@ body {
   z-index:0;
   overflow: hidden;
 }
+
 .home-picture {
-  width: 65%;
-  height: 80%;
+  width: 73%;
+  height: 480px;
   background: url({% static 'img-2021/home-picture.jpg' %});
   background-repeat: no-repeat;
   background-position: center center;
@@ -59,6 +61,7 @@ body {
   left: 25%;
   overflow: hidden;
 }
+
 .wds-logo {
   transform: scale(1.15);
   width: 400px;
@@ -68,15 +71,17 @@ body {
   background-position: center center;
   opacity: 1;
   position: absolute;
-  top: -5%;
+  top: -9%;
   left: 5.5%;
   overflow: hidden;
 }
+
 .home-menu{
-   position: relative;
-   left: 100px;
-   margin-top: -275px;
-   padding: 50px 0;
+   width:fit-content;
+   position: absolute;
+   left: 180px;
+   margin-top: -225px;
+   padding: 0 0;
    clear: both;
    font-size: 18px; 
    font-family: Lato;
@@ -114,9 +119,9 @@ body {
 
 .about{
   width: 100%;
-  margin: auto;
+  margin: 0 0;
   text-align: center;
-  padding-top: 150px;
+  padding-top: 80px;
   padding-bottom: 80px;
   border: 2px solid rgba(195,7,63,1);
   border-top: 2px solid rgba(195,7,63,1);
@@ -140,54 +145,81 @@ p{
   padding: 10px;
 }
 
+@media(max-width:1450px){
 
-@media(max-width:700px){
-  .wds-logo {
-  width: 325px;
-  height: 80%;
-  left: 15%; 
-  }
+.home-menu{
+  left: 100px;
+  margin-top: -250px;
+  
+}
 
-  .home-picture {
-    left:5%;
-    width: 90%;
-    top: 13%;
-  }
-
-  .home-menu{
-    left: 125px;
-    top: 0px;
-  }
-
- 
 
 }
 
-@media(max-width:360px){
-  .wds-logo {
-  width: 325px;
-  height: 80%;
-  left: 5%; 
-  transform: scale(0.95);
-  }
+@media(max-width:1080px){
 
   .home-picture {
-    left:5%;
-    width: 90%;
-    top: 13%;
+    left:23%;
+    width:74%;
+  }
+  .home-menu{
+    left: 100px;
+    margin-top: -300px;
+    
+  }
+  
+ 
+}
+
+@media(max-width:720px){
+
+  .home-picture {
+    left:25%;
+    width:70%;
+  }
+  .home-menu{
+    left: 100px;
+  
+  }
+
+
+}
+
+@media(max-width:480px){
+
+  .home-picture {
+  left:10%;
+  width:82%;
+  }
+
+  .wds-logo{
+    left: 17%;
+    width: 320px;
+    transform: scale(1.05);
   }
 
   .home-menu{
-    left: 80px;
-    top: 0px;
+    left: 150px;
+    padding: 70px 0px ;
+  }
+} 
+
+@media(max-width:360px){
+
+  .home-picture {
+  left:10%;
+  width:82%;
+  }
+  
+  .wds-logo{
+    left: 7%;
+    width: 320px;
+    transform: scale(0.85);
   }
 
-  .black-bg {
-  width: 150px;
-  }
-
-  .red-bg{
-  width: 220px;
+  .home-menu{
+    left: 90px;
+    transform: scale(0.85);
   }
 
 }
@@ -195,11 +227,11 @@ p{
 </style>
 </head>
 <body>
-  <section>
+  <section class="main-sec" style="margin-bottom: 20px;">
 <div class="bg">
   <div>
     <section class="header">
-        {% include 'tradingclosed/navbar.html' %}
+      {% include 'tradingclosed/navbar.html' %}
       </section>
   </div>
  <div class="black-bg"></div>
@@ -207,16 +239,17 @@ p{
  <div class="home-picture"></div>
  <div class="wds-logo"></div>
  <div class="home-menu">
-    <ul class="menu-area">
-      {% if user.is_authenticated %}
-          <li><a href="{% url 'tradingclosed:trading-closed' %}">Enter WDS</a></li>
-      {% else %}
-          <li><a href="{% url 'tradingclosed:trading-closed' %}">Enter WDS</a></li>
-      {% endif %}
-    <li><a href='https://drive.google.com/file/d/1U1O9yaAWVwK1XZc2LzHZ0roBRDJUXFXY/view'>RULEBOOK</a></li>
-    <li><a href='https://drive.google.com/file/d/1Z1EcVPF6WvO-4BBe2uBpcvI1mSUTHm5Y/view?usp=sharing'>SCHEDULE</a></li>
-    </ul>
- </div>
+  <ul class="menu-area">
+  {% if user.is_authenticated %}
+  <li><a href="{% url 'tradingclosed:trading-closed' %}">Enter WDS</a></li>
+  {% else %}
+  <li><a href="{% url 'tradingclosed:trading-closed' %}">Enter WDS</a></li>
+  {% endif %}
+  <li><a href='https://drive.google.com/file/d/1U1O9yaAWVwK1XZc2LzHZ0roBRDJUXFXY/view'>RULEBOOK</a></li>
+  <li><a href='https://drive.google.com/file/d/1Z1EcVPF6WvO-4BBe2uBpcvI1mSUTHm5Y/view?usp=sharing'>SCHEDULE</a></li>
+  </ul>
+  </div>
+  
 </div>
 </section>  
 
@@ -239,20 +272,3 @@ p{
 {% include 'footer.html' %}
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
