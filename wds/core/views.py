@@ -242,8 +242,8 @@ def reqcreate(request):
                             messages.error(
                                 request, f'Insufficient Balance for transaction!!')
                     elif action == 'sell':
-                        if stock == 'RBI':
-                            if (numberofstock <= stock_request_sender.RBI):
+                        if stock == 'RBLBANK':
+                            if (numberofstock <= stock_request_sender.RBLBANK):
                                 request_trade = tradereq.objects.create(
                                     sender=sender,
                                     receiver=receiver, action=action,
@@ -438,8 +438,8 @@ def reqcreate(request):
                             else:
                                 messages.error(
                                     request, f'Insufficient Stock holdings!!')
-                        elif stock == 'ICICIPRULI':
-                            if (numberofstock <= stock_request_sender.ICICIPRULI):
+                        elif stock == 'ICICIBANK':
+                            if (numberofstock <= stock_request_sender.ICICIBANK):
                                 request_trade = tradereq.objects.create(
                                     sender=sender,
                                     receiver=receiver, action=action,

@@ -38,11 +38,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='trade',
             name='stock',
-            field=models.CharField(choices=[('RBI', 'RBI'), ('MARUTI', 'MARUTI'), ('ADANIENT', 'ADANIENT'), ('TATASTEEL', 'TATASTEEL'), ('BOSCHLTD', 'BOSCHLTD'), ('RELIANCE', 'RELIANCE'), ('INFOSYS', 'INFOSYS'), ('BHARTIARTL', 'BHARTIARTL'), ('ITC', 'ITC'), ('HDFCBANK', 'HDFCBANK'), ('CIPLA', 'CIPLA'), ('TCS', 'TCS'), ('TATAMOTORS', 'TATAMOTORS'), ('ASIANPAINT', 'ASIANPAINT'), ('ICICIPRULI', 'ICICIPRULI'), ('HINDUNILVR', 'HINDUNILVR'), ('GLENMARK', 'GLENMARK'), ('LUPIN', 'LUPIN'), ('ONGC', 'ONGC'), ('NETWORK18', 'NETWORK18')], max_length=100),
+            field=models.CharField(choices=[('RBLBANK', 'RBLBANK'), ('MARUTI', 'MARUTI'), ('ADANIENT', 'ADANIENT'), ('TATASTEEL', 'TATASTEEL'), ('BOSCHLTD', 'BOSCHLTD'), ('RELIANCE', 'RELIANCE'), ('INFOSYS', 'INFOSYS'), ('BHARTIARTL', 'BHARTIARTL'), ('ITC', 'ITC'), ('HDFCBANK', 'HDFCBANK'), ('CIPLA', 'CIPLA'), ('TCS', 'TCS'), ('TATAMOTORS', 'TATAMOTORS'), ('ASIANPAINT', 'ASIANPAINT'), ('ICICIBANK', 'ICICIBANK'), ('HINDUNILVR', 'HINDUNILVR'), ('GLENMARK', 'GLENMARK'), ('LUPIN', 'LUPIN'), ('ONGC', 'ONGC'), ('NETWORK18', 'NETWORK18')], max_length=100),
         ),
         migrations.AlterField(
             model_name='tradereq',
             name='stock',
-            field=models.CharField(choices=[('RBI', 'RBI'), ('MARUTI', 'MARUTI'), ('ADANIENT', 'ADANIENT'), ('TATASTEEL', 'TATASTEEL'), ('BOSCHLTD', 'BOSCHLTD'), ('RELIANCE', 'RELIANCE'), ('INFOSYS', 'INFOSYS'), ('BHARTIARTL', 'BHARTIARTL'), ('ITC', 'ITC'), ('HDFCBANK', 'HDFCBANK'), ('CIPLA', 'CIPLA'), ('TCS', 'TCS'), ('TATAMOTORS', 'TATAMOTORS'), ('ASIANPAINT', 'ASIANPAINT'), ('ICICIPRULI', 'ICICIPRULI'), ('HINDUNILVR', 'HINDUNILVR'), ('GLENMARK', 'GLENMARK'), ('LUPIN', 'LUPIN'), ('ONGC', 'ONGC'), ('NETWORK18', 'NETWORK18')], max_length=100),
+            field=models.CharField(choices=[('RBLBANK', 'RBLBANK'), ('MARUTI', 'MARUTI'), ('ADANIENT', 'ADANIENT'), ('TATASTEEL', 'TATASTEEL'), ('BOSCHLTD', 'BOSCHLTD'), ('RELIANCE', 'RELIANCE'), ('INFOSYS', 'INFOSYS'), ('BHARTIARTL', 'BHARTIARTL'), ('ITC', 'ITC'), ('HDFCBANK', 'HDFCBANK'), ('CIPLA', 'CIPLA'), ('TCS', 'TCS'), ('TATAMOTORS', 'TATAMOTORS'), ('ASIANPAINT', 'ASIANPAINT'), ('ICICIBANK', 'ICICIBANK'), ('HINDUNILVR', 'HINDUNILVR'), ('GLENMARK', 'GLENMARK'), ('LUPIN', 'LUPIN'), ('ONGC', 'ONGC'), ('NETWORK18', 'NETWORK18')], max_length=100),
         ),
     ]

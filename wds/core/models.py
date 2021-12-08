@@ -11,7 +11,7 @@ from django.http import HttpResponse
 #from django.dispatch import receiver
 # Create your models here.
 stock_list = (
-    ('RBI', 'RBI'),
+    ('RBLBANK', 'RBLBANK'),
     ('MARUTI', 'MARUTI'),
     ('ADANIENT', 'ADANIENT'),
     ('TATASTEEL', 'TATASTEEL'),
@@ -25,7 +25,7 @@ stock_list = (
     ('TCS', 'TCS'),
     ('TATAMOTORS', 'TATAMOTORS'),
     ('ASIANPAINT', 'ASIANPAINT'),
-    ('ICICIPRULI', 'ICICIPRULI'),
+    ('ICICIBANK', 'ICICIBANK'),
     ('HINDUNILVR', 'HINDUNILVR'),
     ('GLENMARK', 'GLENMARK'),
     ('LUPIN', 'LUPIN'),
@@ -66,7 +66,7 @@ class Stock(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, default=1)
     userbalance = models.FloatField(default=100000.0)
-    RBI = models.IntegerField(default=0)
+    RBLBANK = models.IntegerField(default=0)
     MARUTI = models.IntegerField(default=0)
     ADANIENT = models.IntegerField(default=0)
     TATASTEEL = models.IntegerField(default=0)
@@ -80,7 +80,7 @@ class Stock(models.Model):
     TCS = models.IntegerField(default=0)
     TATAMOTORS = models.IntegerField(default=0)
     ASIANPAINT = models.IntegerField(default=0)
-    ICICIPRULI = models.IntegerField(default=0)
+    ICICIBANK = models.IntegerField(default=0)
     HINDUNILVR = models.IntegerField(default=0)
     GLENMARK = models.IntegerField(default=0)
     LUPIN = models.IntegerField(default=0)
@@ -136,11 +136,11 @@ class tradereq(models.Model):
             receiver_stock.userbalance = receiver_stock.userbalance + \
                 (amount*0.97)
 
-            if self.stock == 'RBI':
-                if (receiver_stock.RBI >= self.numberofstocks):
+            if self.stock == 'RBLBANK':
+                if (receiver_stock.RBLBANK >= self.numberofstocks):
                     if(sender_stock.userbalance >= amount):
-                        sender_stock.RBI = sender_stock.RBI+self.numberofstocks
-                        receiver_stock.RBI = receiver_stock.RBI-self.numberofstocks
+                        sender_stock.RBLBANK = sender_stock.RBLBANK+self.numberofstocks
+                        receiver_stock.RBLBANK = receiver_stock.RBLBANK-self.numberofstocks
                         self.is_active = False
                         self.status = 'accepted'
                     else:
@@ -296,11 +296,11 @@ class tradereq(models.Model):
                         return ('Currently Sender have Insufficient Balance to Buy!')
                 else:
                     return ('Insufficient Stock Holdings')
-            elif self.stock == 'ICICIPRULI':
-                if (receiver_stock.ICICIPRULI >= self.numberofstocks):
+            elif self.stock == 'ICICIBANK':
+                if (receiver_stock.ICICIBANK >= self.numberofstocks):
                     if(sender_stock.userbalance >= amount):
-                        sender_stock.ICICIPRULI = sender_stock.ICICIPRULI+self.numberofstocks
-                        receiver_stock.ICICIPRULI = receiver_stock.ICICIPRULI-self.numberofstocks
+                        sender_stock.ICICIBANK = sender_stock.ICICIBANK+self.numberofstocks
+                        receiver_stock.ICICIBANK = receiver_stock.ICICIBANK-self.numberofstocks
                         self.is_active = False
                         self.status = 'accepted'
                     else:
@@ -373,10 +373,10 @@ class tradereq(models.Model):
                 sender_stock.userbalance = sender_stock.userbalance-amount
                 receiver_stock.userbalance = receiver_stock.userbalance + \
                     (amount*0.97)
-                if self.stock == 'RBI':
-                    if(receiver_stock.RBI >= self.numberofstocks):
-                        sender_stock.RBI = sender_stock.RBI+self.numberofstocks
-                        receiver_stock.RBI = receiver_stock.RBI-self.numberofstocks
+                if self.stock == 'RBLBANK':
+                    if(receiver_stock.RBLBANK >= self.numberofstocks):
+                        sender_stock.RBLBANK = sender_stock.RBLBANK+self.numberofstocks
+                        receiver_stock.RBLBANK = receiver_stock.RBLBANK-self.numberofstocks
                     else:
                         return ('Currently Sender do not have sufficient stocks to sell!')
                 elif self.stock == 'MARUTI':
@@ -458,10 +458,10 @@ class tradereq(models.Model):
                         receiver_stock.ASIANPAINT = receiver_stock.ASIANPAINT-self.numberofstocks
                     else:
                         return ('Currently Sender do not have sufficient stocks to sell!')
-                elif self.stock == 'ICICIPRULI':
-                    if(receiver_stock.ICICIPRULI >= self.numberofstocks):
-                        sender_stock.ICICIPRULI = sender_stock.ICICIPRULI+self.numberofstocks
-                        receiver_stock.ICICIPRULI = receiver_stock.ICICIPRULI-self.numberofstocks
+                elif self.stock == 'ICICIBANK':
+                    if(receiver_stock.ICICIBANK >= self.numberofstocks):
+                        sender_stock.ICICIBANK = sender_stock.ICICIBANK+self.numberofstocks
+                        receiver_stock.ICICIBANK = receiver_stock.ICICIBANK-self.numberofstocks
                     else:
                         return ('Currently Sender do not have sufficient stocks to sell!')
                 elif self.stock == 'HINDUNILVR':
