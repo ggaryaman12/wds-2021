@@ -119,11 +119,11 @@ nav{
                   <a href="{% url 'tradingclosed:trading-closed' %}">&nbsp Stocks</a>
                  </li>
                  {% if user.is_authenticated %}
-                    <li><a href="{% url 'tradingclosed:trading-closed' %}">&nbsp News</a></li>
+                    <li><a href="{% url 'tradingclosed:news' %}">&nbsp News</a></li>
                     <li><a href="{% url 'tradingclosed:trading-closed' %}">&nbsp Dashboard</a></li>
                     <li><a href="{% url 'tradingclosed:userlogout' %}">&nbsp Logout</a></li>
                     {% else %}
-                    <li><a href="{% url 'tradingclosed:trading-closed' %}">&nbsp News</a></li>
+                    <li><a href="{% url 'tradingclosed:news' %}">&nbsp News</a></li>
                     <li><a href="{% url 'tradingclosed:trading-closed' %}">&nbsp Login</a></li>
                   {% endif %}
               </ul>
