@@ -23,8 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('register/', core_views.register, name='register'),
     #path('', include('core.urls', namespace='core')),
-    #path('', include('international.urls', namespace='international'))
-    path('', include('tradingclosed.urls', namespace='tradingclosed')),
+    path('', include('international.urls', namespace='international'))
+    #path('', include('tradingclosed.urls', namespace='tradingclosed')),
 ]
 if settings.DEBUG:
     import debug_toolbar
